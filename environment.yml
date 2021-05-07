@@ -1,0 +1,19 @@
+name: stylemotion
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - matplotlib
+  - numpy
+  - pytorch
+  - cudatoolkit=10.2
+  - scikit-learn
+  - tensorboardx
+  - tqdm
+  - docopt
+  - pandas
+  - joblib
+  - librosa
+  - pip
+  - pip:
+    - transforms3d
