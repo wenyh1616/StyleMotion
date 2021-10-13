@@ -54,7 +54,7 @@
         "warm_start": ""
     },
     "Infer": {
-        "pre_trained": "./results/locomotion/log_20201114_1057_model/checkpoints/trained.pkg"
+        "pre_trained": ""
     }
 }
 
