@@ -383,12 +383,12 @@ class Trainer(object):
                 cond = batch["cond"].to(self.data_device) # 100, 663, 70
 
 
+
                 # at first time, initialize ActNorm
                 if self.global_step == 0:
                     self.graph(x[:self.batch_size // len(self.devices), ...],
                                cond[:self.batch_size // len(self.devices), ...] if cond is not None else None)
 
-                # print("n_params: " + str(self.count_parameters(self.graph)))
 
                 # parallel
                 if len(self.devices) > 1 and not hasattr(self.graph, "module"):
@@ -432,12 +432,6 @@ class Trainer(object):
                         #     val_batch[k] = val_batch[k].to(self.data_device)
 
                         with torch.no_grad():
-
-                            # init LSTM hidden
-                            if hasattr(self.graph, "module"):
-                                self.graph.module.init_lstm_hidden()
-                            else:
-                                self.graph.init_lstm_hidden()
 
                             z_val, nll_val = self.graph(x=val_batch["x"].to(self.data_device), cond=val_batch["cond"].to(self.data_device))
 
