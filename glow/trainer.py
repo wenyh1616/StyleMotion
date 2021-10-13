@@ -382,21 +382,11 @@ class Trainer(object):
 
                 cond = batch["cond"].to(self.data_device) # 100, 663, 70
 
-                # init LSTM hidden
-                if hasattr(self.graph, "module"):
-                    self.graph.module.init_lstm_hidden()
-                else:
-                    self.graph.init_lstm_hidden()
 
                 # at first time, initialize ActNorm
                 if self.global_step == 0:
                     self.graph(x[:self.batch_size // len(self.devices), ...],
                                cond[:self.batch_size // len(self.devices), ...] if cond is not None else None)
-                    # re-init LSTM hidden
-                    if hasattr(self.graph, "module"):
-                        self.graph.module.init_lstm_hidden()
-                    else:
-                        self.graph.init_lstm_hidden()
 
                 # print("n_params: " + str(self.count_parameters(self.graph)))
 
