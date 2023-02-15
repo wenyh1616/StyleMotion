@@ -6,9 +6,9 @@ Our code is based on [Glow](https://github.com/chaiyujin/glow-pytorch/) and [MoG
 The conda environment defined in 'environment.yml' contains the required dependencies.
 
 ## Data & Pretrained Model
-Our training data is available [here](https://drive.google.com/file/d/1tcuEVSaKis263o2Vve-440V7SB5KUIW1/view?usp=sharing).
+Our training data is available [here](https://drive.google.com/file/d/1v_lAIvJAsv334k18gAn8a0tn5zSmx3bD/view?usp=sharing).
 
-Our pretrained model is available [here](https://drive.google.com/file/d/1_wE9RX3Xae_9KA1r5kiciHL_Kql8kzCN/view?usp=sharing).
+Our pretrained model is available [here](https://drive.google.com/file/d/1RRp8ylFDSrD_H_4tXHDKFudqA9uMc95v/view?usp=sharing).
 
 Prepare the environment by: conda env create -f environment.yml 
 
